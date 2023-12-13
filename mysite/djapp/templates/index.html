@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
+    <title>Form</title>
+</head>
+<body>
+    <div class="form__card">
+        <div class="card__wrap">
+            <h1 class="form__title">Регистрация</h1>
+            <h3 class="form__subtitle">Создайте учетную запись</h3>
+            <form action="congrats/" method="post">
+                {% csrf_token %}
+
+                <p class="form__input__title">Введите имя</p>
+                    {{ form.name }}
+
+
+                <p class="form__input__title">Введите Email</p>
+                    {{ form.email }}
+
+
+                <p class="form__input__title">Введите пароль</p>
+                    {{ form.password }}
+
+                <br><br>
+                <button class="in form__button" type="submit">Регистрация</button>
+            </form>
+            <a href="{{ 'http://127.0.0.1:8000/' }}" class="form__goback">Вернуться к странице входа</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <title>Form Sign</title>
+</head>
+<body>
+    <div class="form__card">
+        <div class="card__wrap">
+            <h1 class="form__title">Вход</h1>
+            <h3 class="form__subtitle">Войдите в учетную запись</h3>
+
+            <form action="successful/" method="post">
+                {% csrf_token %}
+
+                <p class="form__input__title" >Введите имя</p>
+                {{ signin.name }}
+
+
+                <p class="form__input__title">Введите пароль</p>
+                {{ signin.password }}
+
+
+                <a href="http://127.0.0.1:8000/forget/" class="pswrd form__input__title">Забыли пароль?</a>
+                <br><br>
+                <button class="in form__button" type="submit">Войти</button>
+
+            </form>
+
+            <h4 class="form__goback">---Еще не зарегестрированы?---</h4>
+            <button class="reg form__button" type="submit" onclick="location.href='http://127.0.0.1:8000/reg/'">Регистрация</button>
+        </div>
+    </div>
+</body>
+</html>
